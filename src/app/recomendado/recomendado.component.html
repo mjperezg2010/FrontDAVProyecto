@@ -1,4 +1,3 @@
-<!--Tab Home Visualizacion de restaurantes-->
 <mat-grid-list cols="4" >
     <mat-grid-tile *ngFor="let i of restaurantes">
       <mat-card class="sizeCard">
@@ -7,7 +6,7 @@
           <mat-card-title>{{i.name}}</mat-card-title>
           <mat-card-subtitle></mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{this.appservice.imagenes[i.image]}}>
+        <!--<img mat-card-image src={{this.appservice.imagenes[i.image]}}>-->
         <mat-card-content>
           <p>
             General Cost: {{i.price}}
@@ -19,7 +18,7 @@
             Smoking Area: {{i.smoking_area}}
         </p>
         </mat-card-content>
-   
+       
       </mat-card>
     </mat-grid-tile>
     

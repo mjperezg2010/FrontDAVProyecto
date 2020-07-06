@@ -8,7 +8,7 @@ import { PaginaRestauranteComponent } from './principal/pagina-restaurante/pagin
 export const routes: Routes = [
   {
     path:"",
-    redirectTo:'principal',
+    redirectTo:'inicio',
     pathMatch:'full'
 
   },
@@ -20,7 +20,7 @@ export const routes: Routes = [
 
   },
   {
-    path:'paginarestaurante',
+    path:'inicio',
     component: PaginaRestauranteComponent,
     
   }  

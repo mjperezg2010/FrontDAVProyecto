@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
-import { Restaurante } from 'src/app/model/restaurante.model';
 import { Router } from '@angular/router';
-import { Comida } from 'src/app/model/comida.model';
+import { restauranteAPI } from 'src/app/model/restauranteAPI.model';
+import { Usuario } from 'src/app/model/usuario.model';
 
 @Component({
   selector: 'app-pagina-restaurante',
@@ -11,18 +11,41 @@ import { Comida } from 'src/app/model/comida.model';
 })
 export class PaginaRestauranteComponent implements OnInit {
 
-  restaurante:Restaurante;
-  comidas:Comida[];
+  restaurante:restauranteAPI;
+  usuarios:Usuario[];
+  id:string;
 
   constructor(public appservice:AppService,public router:Router) { }
 
   ngOnInit(): void {
     this.restaurante=this.appservice.getRestauranteActual();
-    this.comidas=this.appservice.getComidas();
+    this.usuarios=this.appservice.getUsuarios();
+    
   }
 
-  goHome() {
-    this.router.navigate(['/principal']);    
+  getValue(value) {  
+   this.id=value.target.value;
+  }
+
+  logIn(){
+   
+
+    for (let i = 0; i <this.usuarios.length; i++) {
+      
+      if(this.usuarios[i].ID==this.id){
+        this.appservice.setUsuarioActual(this.usuarios[i])
+        this.router.navigate(['/principal']);
+        this.appservice.getRecomendados();
+        
+        break;
+        
+      }
+      
+    }
+
+    
+
+
   }
 
 }

@@ -10,14 +10,14 @@
             </mat-panel-title>
          
         </mat-expansion-panel-header>
-        <p>{{cliente.nombre}}</p>
-        <p>Detalles Cuenta</p>
+        <p>Smoker: {{usuario.smoker}}</p>
+        <p>ID: {{usuario.ID}}</p>
         
       
     </mat-expansion-panel>
 
 
-    <button mat-mini-fab color='light'>
+    <button mat-mini-fab color='light' (click)='logout()'>
         <mat-icon>exit_to_app</mat-icon>
     </button>
 </mat-toolbar>
@@ -26,40 +26,13 @@
 <mat-tab-group color='primary'>
     <!--Tab1-->
     <mat-tab label="Home">
-
       <app-home></app-home>
-      
-      
-      
-    </mat-tab>
+    </mat-tab>    
      <!--Tab2-->
-    <mat-tab label="Favoritos">
-      <h1>Some more tab content</h1>
-      <p>...</p>
-    </mat-tab>
-     <!--Tab3-->
-    <mat-tab label="Recomendados">
+     <mat-tab label="Recomendados">
         <!--Listar Restaurantes-->
+        <app-recomendado></app-recomendado>
 
-      
-            
-        
-    
-        
-        
-
-        
-
-       
-
-
-
-        
-  
-        
-       
-
-        
       </mat-tab>
 </mat-tab-group>
 

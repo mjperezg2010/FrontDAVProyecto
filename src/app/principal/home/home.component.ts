@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
 import { Router } from '@angular/router';
-import { Restaurante } from 'src/app/model/restaurante.model';
+import { restauranteAPI } from 'src/app/model/restauranteAPI.model';
 
 
 @Component({
@@ -11,18 +11,20 @@ import { Restaurante } from 'src/app/model/restaurante.model';
 })
 export class HomeComponent implements OnInit {
 
-  restaurantes:Restaurante[];
+  restaurantes:restauranteAPI[];
+  
 
-  constructor(public appservice:AppService,public router:Router) { }
+  constructor(public appservice:AppService,public router:Router) {
+  
+  }
 
   ngOnInit(): void {
-    this.restaurantes=this.appservice.restaurantes;
-  }
-
-  goRestaurante(restaurante:Restaurante) {
-    this.appservice.setRestauranteActual(restaurante);
-    this.router.navigate(['/paginarestaurante']);
+    
+    this.restaurantes=this.appservice.getRestaurantesAPI();
+    
     
   }
+
+
 
 }

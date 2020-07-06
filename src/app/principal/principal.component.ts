@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
-import { Cliente } from '../model/cliente.model';
+
+import { Usuario } from '../model/usuario.model';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -10,18 +13,20 @@ import { Cliente } from '../model/cliente.model';
 })
 export class PrincipalComponent implements OnInit {
 
-  public cliente:Cliente;
+  usuario:Usuario;
 
-  constructor(public appservice:AppService) { }
+  constructor(public appservice:AppService,public router:Router) { }
  
 
   ngOnInit(): void {
-    this.appservice.setClienteActual();
-    this.cliente=this.appservice.getClienteActual();
-
-    
+    this.usuario=this.appservice.getUsuarioActual();
+       
   }
 
+  logout(){
+    this.router.navigate(['/inicio']);
+  }
+  
   
 
  

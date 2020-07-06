@@ -19,10 +19,33 @@
  
 }
 
+.subtitulo{
+  color: black;
+  font-size: medium;
+}
+
+.titulo{
+  font-size: xx-large;
+  text-align: center;
+}
+
+
 
 .color2{
   
   background-color: cadetblue;
+}
+
+.sizeCard{
+  background-color: cadetblue;
+  margin-top: 200px;
+  margin-left: 350px;
+  max-width: 800px;
+  max-height: 800px;
+}
+
+.fondo{
+  background-color: darkcyan;
 }
 
 

@@ -1,48 +1,28 @@
-<div class="color">
-    <mat-toolbar color='primary'>
-        <button mat-mini-fab color='light'>
-            <mat-icon (click)='goHome()'>keyboard_backspace</mat-icon>
-        </button>
-        <span class="example-fill-remaining-space"></span>   
-        <span>Waldelivery - {{restaurante.nombre}}</span>
-        <span class="example-fill-remaining-space"></span> 
-        <button mat-mini-fab color='light'>
-            <mat-icon>favorite</mat-icon>
-        </button>
-    </mat-toolbar>
+<div class="fondo">
 
-    <img mat-card-image [src]='restaurante.imagen'  class="example-container">
-
-    <div class="color2">
-        <mat-list *ngFor="let i of comidas">
-            <mat-card class="sizeCard">    
-                <mat-card-header>
-                <mat-card-title>{{i.nombre}}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                <p>
-                    Atencion: {{i.descripcion}}
-                </p>
-                </mat-card-content>
-                <mat-card-actions align='end'>
-                <button mat-button>Favoritos</button>
-                </mat-card-actions>
-                
-            </mat-card>
+    <mat-card class="sizeCard">    
+        <mat-card-header>
+        <mat-card-title class='titulo'><h1>Log In Magistral</h1></mat-card-title>
+        <mat-card-subtitle class="subtitulo"><h2>Ingrese su id estimado</h2></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+       
+            <p>
+                <mat-form-field>
+                  <input matInput placeholder="ID" (keyup)=getValue($event)>
+                </mat-form-field>
+            </p>
+           
+              
+      
+            
+        </mat-card-content>
+        <mat-card-actions align='center'>
+            <button mat-button (click)='logIn()'>Log In</button>
+        </mat-card-actions>
         
-        </mat-list>
-    </div>  
-    
+    </mat-card>
 
 
-
-
-
-
-    
-        
-        
-  
 
 </div>
-

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './principal/principal.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,6 +20,10 @@ import {MatListModule} from '@angular/material/list';
 import { PaginaRestauranteComponent } from './principal/pagina-restaurante/pagina-restaurante.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './principal/home/home.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { RecomendadoComponent } from './recomendado/recomendado.component';
+
 
 
 
@@ -30,6 +34,7 @@ import { HomeComponent } from './principal/home/home.component';
     PrincipalComponent,
     PaginaRestauranteComponent,
     HomeComponent,
+    RecomendadoComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,14 @@ import { HomeComponent } from './principal/home/home.component';
     MatCardModule,
     MatListModule,
     AppRoutingModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule
+    
+
+ 
+    
   
   ],
   providers: [],
